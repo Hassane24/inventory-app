@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { DateTime } = require("luxon");
 
 const Schema = mongoose.Schema;
 
@@ -8,6 +9,7 @@ const gameSchema = new Schema({
   category: { type: Schema.Types.ObjectId, ref: "Category", require: true },
   rating: { type: Number, required: true, min: 0, max: 10 },
   price: { type: Number, required: true },
+  release_date: { type: Date, required: true },
 });
 
 gameSchema.virtual("url").get(function () {
