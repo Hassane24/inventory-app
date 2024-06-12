@@ -1,5 +1,19 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div.container
+    div
+      h1= title
+      p Welcome to #{title}
+    div 
+      ul
+        li 
+          a(href="/games") All games 
+        li 
+          a(href="/games/create") Add game
+        li
+          a(href="/games/categories") All categories 
+        li 
+          a(href="/games/delete") Delete game
+        li 
+          a(href="/games/edit") Edit game
