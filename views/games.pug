@@ -1,4 +1,15 @@
 extends layout 
 
 block content 
-    h1 GAMES
+    h1=title 
+    if games.length
+        div
+            each game in games
+                div      
+                    div Name: #{game.name}
+                    div Synopsis: #{game.synopsis} 
+                    div Rating: #{game.rating}
+                    div Price: #{game.price}
+                    div Release Date: #{game.release_date}
+    else 
+        h1 No games
