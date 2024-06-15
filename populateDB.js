@@ -18,6 +18,7 @@ async function main() {
   console.log("about to connect");
   await mongoose.connect(mongoDB);
   console.log("should be connected");
+  console.log(Category);
   await createCategories();
   await createGames();
   console.log("about to disconnect");
@@ -25,7 +26,11 @@ async function main() {
 }
 
 async function createCategory(index, name, description) {
-  const category = new Category({ name: name, description: description });
+  const categoryData = {
+    name: name,
+    description: description,
+  };
+  const category = Category(categoryData);
   await category.save();
   categories[index] = category;
   console.log(`Added genre: ${name}`);
@@ -40,7 +45,7 @@ async function createGame(
   price,
   release_date
 ) {
-  const game = new game({
+  const game = new Game({
     name: name,
     synopsis: synopsis,
     category: category,
