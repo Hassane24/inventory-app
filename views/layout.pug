@@ -2,6 +2,22 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet' href='/stylesheets/style.css')
   body
+    div.container
+      div
+        h1= title
+        p Welcome to #{title}
+      div 
+        ul
+          li 
+            a(href="/games") All games 
+          li 
+            a(href="/games/create") Add game
+          li
+            a(href="/categories") All categories 
+          li 
+            a(href="/games/delete") Delete game
+          li 
+            a(href="/games/edit") Edit game
     block content
