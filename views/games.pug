@@ -2,13 +2,10 @@
 block content 
     h1=title 
     if games.length
-        div
-            each game in games
-                div      
-                    div Name: #{game.name}
-                    div Synopsis: #{game.synopsis} 
-                    div Rating: #{game.rating}
-                    div Price: #{game.price}
-                    div Release Date: #{game.release_date}
+        each game in games
+            div 
+                a(href=game.url) #{game.name} 
+
+
     else 
         h1 No games
